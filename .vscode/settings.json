@@ -1,0 +1,9 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "__tuple": "c",
+        "array": "c",
+        "push_swap.h": "c",
+        "algorithm": "c"
+    }
+}
