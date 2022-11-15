@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:45:24 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 15:44:25 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:46:06 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void	sort3(t_stacks *stack);
 void	sort5(t_stacks *stack);
 void	ft_arraydup(t_stacks *stack);
 void	insertion_sort(t_stacks *stack);
-void	large_sort(t_stacks *stack);
+void	large_sort(t_stacks *stack, int x);
 
 # endif

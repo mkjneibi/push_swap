@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   large.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:34:07 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 16:16:51 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:45:13 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_arraydup(t_stacks *stack)
 {
-	int   i;
+	int	i;
 
 	i = 0;
 	stack->sstack = malloc(stack->s_size * sizeof(int));
 	if (!stack->sstack)
+		return ;
+	stack->stackb = malloc(stack->a_size * sizeof(int));
+	if (!stack->stackb)
 		return ;
 	while (i < stack->s_size)
 	{
@@ -30,8 +33,8 @@ void	ft_arraydup(t_stacks *stack)
 void	insertion_sort(t_stacks *stack)
 {
 	int	i;
-	int key;
-	int j;
+	int	key;
+	int	j;
 
 	i = 1;
 	while (i < stack->s_size)
@@ -48,12 +51,12 @@ void	insertion_sort(t_stacks *stack)
 	}
 }
 
-void	large_sort(t_stacks *stack)
+void	large_sort(t_stacks *stack, int x)
 {
+	static int	i;
+
 	ft_arraydup(stack);
 	insertion_sort(stack);
-	int i = 0;
-	int x = 15;
 	while (stack->a_size != 0)
 	{
 		if (stack->stacka[stack->a_size - 1] <= stack->sstack[i])
@@ -61,7 +64,7 @@ void	large_sort(t_stacks *stack)
 			pb(stack);
 			i++;
 		}
-		if ((i + x) >= stack->a_size)
+		if ((i + x) >= stack->s_size)
 			x--;
 		else if (stack->stacka[stack->a_size - 1] <= stack->sstack[i + x])
 		{
@@ -71,8 +74,6 @@ void	large_sort(t_stacks *stack)
 		}
 		else
 			ra(stack);
-		printf("hello");
-		// if (i >= stack->s_size)
 	}
 	while (stack->b_size)
 		max_to_top(stack);

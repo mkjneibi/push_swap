@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:31:13 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 15:36:25 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:46:25 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,18 @@ void	sort2(t_stacks *stack)
 
 void	sort5(t_stacks *stack)
 {
-		stack->stackb = malloc(stack->a_size * sizeof(int));
-		if (!stack->stackb)
-			_err(stack, "memory allocation");
-		while (stack->a_size != 3)
-			min_to_top(stack);
-		sort3(stack);
-		while (stack->b_size != 0)
-			pa(stack);
-		finish(stack);
+	stack->stackb = malloc(stack->a_size * sizeof(int));
+	if (!stack->stackb)
+		_err(stack, "memory allocation");
+	while (stack->a_size != 3)
+		min_to_top(stack);
+	sort3(stack);
+	while (stack->b_size != 0)
+		pa(stack);
+	finish(stack);
 }
 
-void    sort(t_stacks *stack)
+void	sort(t_stacks *stack)
 {
 	inverse_stack(stack->stacka, stack->a_size);
 	if (stack->a_size == 2)
@@ -83,5 +83,11 @@ void    sort(t_stacks *stack)
 	else if (stack->a_size > 3 && stack->a_size <= 5)
 		sort5(stack);
 	else
-		large_sort(stack);
+	{	
+		if (stack->a_size <= 100)
+			large_sort(stack, 15);
+		else if (stack->a_size <= 500)
+			large_sort(stack, 30);
+		finish(stack);
+	}
 }

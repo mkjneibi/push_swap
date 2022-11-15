@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:01:01 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 15:38:37 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:41:56 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac, char **av)
 	t_stacks	stack;
 
 	if (ac != 2)
-		exit(1);
+		return (1);
 	_init(&stack, av);
 	stack.a_size = count_words(av[1], ' ');
 	stack.s_size = count_words(av[1], ' ');
@@ -25,4 +25,5 @@ int main(int ac, char **av)
 	add_stack_a(&stack);
 	sorted(&stack);
 	sort(&stack);
+	return (0);
 }
