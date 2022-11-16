@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:51:53 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 15:22:42 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:55:36 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 
 void	all_num(char *m, t_stacks *stack)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (m[x])
 	{
-		if (!ft_isdigit(m[x]) && m[x] != ' ' &&
-			m[x] != '-' && m[x] != '+' && m[x])
+		if (!ft_isdigit(m[x]) && m[x] != ' '
+			&& m[x] != '-' && m[x] != '+' && m[x])
 			_err(stack, "There's error in input char");
 		if ((m[x] == '-' || m[x] == '+') && m[x - 1] != ' ' && m[x - 1])
 			_err(stack, "There's error in input -/+ wrong");
@@ -35,6 +35,7 @@ void	all_num(char *m, t_stacks *stack)
 // to find duplicates in (stack a) giving the structure and the value to
 // check for and the size of the current (stack a) from the index
 // that split at
+
 int	dup_check(t_stacks stack, int value, int x)
 {
 	int	i;
@@ -91,11 +92,11 @@ int	ft_atoi_ps(const char *s, int *flag)
 
 void	add_stack_a(t_stacks *stack)
 {
-	int        x;
-    int        flag;
+	int	x;
+	int	flag;
 
 	x = 0;
-    flag = 0;
+	flag = 0;
 	stack->stacka = malloc(sizeof(int) * stack->a_size);
 	if (!stack->stacka)
 		_err(stack, "Not enough memory");
@@ -106,9 +107,9 @@ void	add_stack_a(t_stacks *stack)
 	{
 		stack->stacka[x] = ft_atoi_ps(stack->str[x], &flag);
 		if (flag == 1)
-            _err(stack, "big number");
+			_err(stack, "big number");
 		if (dup_check(*stack, stack->stacka[x], x - 1))
-            _err(stack, "Duplicate value");
+			_err(stack, "Duplicate value");
 		x++;
 	}
 	// [-28,0,3,214,28,?]

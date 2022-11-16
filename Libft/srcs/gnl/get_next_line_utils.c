@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 13:34:57 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/08/23 16:05:23 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:58:15 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*ft_new_line(char *a)
 		free(a);
 		return (NULL);
 	}
-	str = malloc((ft_strlen_gnl(a) - i + 1)); //length of s - (new line we already found before) + (null)
+	str = malloc((ft_strlen_gnl(a) - i + 1));
 	if (!str)
 		return (NULL);
 	i++;

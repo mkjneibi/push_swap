@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_utlis.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:35:21 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 15:36:22 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:56:15 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	min_to_top(t_stacks *stack)
 {
 	int	j;
 	int	i;
+
 	j = min_index(stack->stacka, stack->a_size);
 	i = j;
 	if (j >= stack->a_size / 2)

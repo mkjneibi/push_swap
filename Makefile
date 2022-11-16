@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+         #
+#    By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 15:07:10 by mealjnei          #+#    #+#              #
-#    Updated: 2022/11/15 15:37:32 by mealjnei         ###   ########.fr        #
+#    Updated: 2022/11/16 14:22:47 by mealjnei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS	= -g
 RM		= rm -f
 
 SRCS        = srcs/main.c srcs/err_utlis.c srcs/parsing.c srcs/op1.c srcs/op2.c \
-				srcs/sorting.c srcs/sorting_utlis.c srcs/large.c
+				srcs/sorting.c srcs/sorting_utlis.c srcs/large.c srcs/free.c
 LIBFT_PATH	=	./Libft
 ECHO = -printf
 
