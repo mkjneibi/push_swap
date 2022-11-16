@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mealjnei <mealjnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mealjnei <mealjnei@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:31:13 by mealjnei          #+#    #+#             */
-/*   Updated: 2022/11/15 17:46:25 by mealjnei         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:28:31 by mealjnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	sort(t_stacks *stack)
 	else if (stack->a_size > 3 && stack->a_size <= 5)
 		sort5(stack);
 	else
-	{	
+	{
 		if (stack->a_size <= 100)
 			large_sort(stack, 15);
 		else if (stack->a_size <= 500)
